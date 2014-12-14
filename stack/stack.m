@@ -26,25 +26,22 @@
     }
     else
     {
-        node *current = self.top;
-        while (current.next != nil) {
-            
-            current = current.next;
-        }
-        current.next = [[node alloc]initWith:num];
-        current.next.next = nil;
-        self.top = current.next;
+
+        node *newNode = [[node alloc]initWith:num];
+        newNode.next = self.top;
+        self.top = newNode;
+        
     }
 }
 
--(node *)pop
+-(NSInteger *)pop
 {
     
     if(self.top)
     {
         node *topNode = self.top;
         self.top = self.top.next;
-        return topNode;
+        return topNode.num;
     }
     return nil;
     

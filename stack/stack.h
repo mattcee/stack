@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "node.h"
 
 @interface stack : NSObject
 
 -(void)push: (NSInteger *) num;
+-(NSInteger *)pop;
 
 @end
